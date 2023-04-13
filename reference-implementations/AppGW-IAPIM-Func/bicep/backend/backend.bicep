@@ -20,6 +20,7 @@ param backendSubnetId string
 param privateEndpointSubnetid string
 param vnetName string
 param vnetRG string
+param utc string = utcNow()
 
 param location string
 
@@ -34,7 +35,7 @@ var owner = 'APIM Const Set'
 // Azure Storage Sizing
 //
 // - name: must be globally unique
-var storageAccounts_saapimcsbackend_name  = toLower(take(replace('stbknd${workloadName}${environment}${location}${uniqueString(utcNow())}', '-',''), 24))
+var storageAccounts_saapimcsbackend_name  = toLower(take(replace('stbknd${workloadName}${environment}${location}${uniqueString(utc)}', '-',''), 24))
 // - location
 var storageAccounts_location = location
 // - SKU name
