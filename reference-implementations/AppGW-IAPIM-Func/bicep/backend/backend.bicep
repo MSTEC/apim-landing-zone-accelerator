@@ -35,7 +35,7 @@ var owner = 'APIM Const Set'
 // Azure Storage Sizing
 //
 // - name: must be globally unique
-var storageAccounts_saapimcsbackend_name  = toLower(take(replace('stbknd${workloadName}${environment}${location}${uniqueString(resourceGroup().id)}', '-',''), 24))
+var storageAccounts_saapimcsbackend_name  = toLower(take(replace('st${workloadName}${environment}${uniqueString(resourceGroup().id)}', '-',''), 24))
 // - location
 var storageAccounts_location = location
 // - SKU name
